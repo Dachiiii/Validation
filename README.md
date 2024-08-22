@@ -6,6 +6,11 @@
 A Simple PHP input validation to ensure data integrity and security in web applications.
 This library provides set of rules for validating various types of input.
 
+## Installation via composer
+```
+composer require dachiiii/validation
+```
+
 ## Usage
 
 to validate input data, several steps has to be taken, creating FormValidationClass, set rules, and validate.
