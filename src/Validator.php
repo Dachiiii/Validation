@@ -4,6 +4,7 @@ namespace Validation;
 
 class Validator {
 	private array $errors = [];
+	public array $rules = [];
 
 	/**
 	* Validate the data based on the given rules.
@@ -196,6 +197,16 @@ class Validator {
 			$this->addError($field, $message);
 	}
 
+	/**
+	* Validate Boolean Field
+	* @param $field field name
+	* @param $value field value
+	*/
+	private function validateBool(string $field, $value) {
+		$acceptable = [true,false,0,1,'0','1','on','off'];
+		if (!in_array($value, $acceptable))
+			$this->addError($field,"{$field} field is invalid.");
+	} 
 	/**
 	* Validates if file's mimetype matches file extension
 	* THESE ARE BASIC FILE EXTENSIONS, YOU CAN ALWAYS ADD MORE.
