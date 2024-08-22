@@ -35,3 +35,19 @@ For example, if you want to validate Add Product Form, it may look like this:
         }
     }
 ```
+
+### File Validation
+
+```
+$this->rules['file'] = "file";
+```
+
+This code validates if input is file, even though this is correct, always use **mime:types** with it,
+because if it's validated without mime types, it means any kind of file will pass validation, and
+website will become vulnerable to file upload vulnerabilites. Safest way to validate files is:
+
+```
+protected array $valid_mime_types = ['video/mp4','image/png','image/gif','image/jpeg',...];
+...
+$this->rules['file'] = "file|mime:valid_mime_types";
+```
