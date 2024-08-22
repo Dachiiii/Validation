@@ -1,0 +1,19 @@
+{
+    "name": "dachiiii/validation",
+    "description": "A simple and easy to use validation library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Validation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dachiiii"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.3"
+    }
+}
