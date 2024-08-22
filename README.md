@@ -4,7 +4,8 @@
 # PHP Input Validation Library
 
 A Simple PHP input validation to ensure data integrity and security in web applications.
-This library provides set of rules for validating various types of input.
+This library provides set of rules for validating various types of input, and also
+prevents XSS, and File Upload Vulnerabilites by sanitizing and validation.
 
 ## Installation via composer
 ```
