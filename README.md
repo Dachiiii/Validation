@@ -56,3 +56,15 @@ protected array $valid_mime_types = ['video/mp4','image/png','image/gif','image/
 ...
 $this->rules['file'] = "file|mime:valid_mime_types";
 ```
+
+## Final Validation
+
+```
+$validator = new ProductFormValidation();
+if ($validator->validate($to_validate, $validator->rules)) {
+    // Validation Pass
+} else {
+    // Validation Failed
+    $errors = $validator->getErrors();
+}
+```
