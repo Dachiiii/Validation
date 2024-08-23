@@ -14,13 +14,13 @@ composer require dachiiii/validation
 
 ## Usage
 
-to validate input data, several steps has to be taken, creating FormValidationClass, set rules, and validate.
-For example, if you want to validate Add Product Form, it may look like this:
+to validate input data, several steps have to be taken, creating FormValidationClass, set rules, and validate.
+For example, if you want to validate Add Product Form, you must create **regular class file** in your project,
+and write rules in it, for example:
 
 ```
-// Location: /src/Validate/ProductFormValidation.php
 <?php
-    namespace Validation\Validate;
+    // your\namespace    if necessarily
     use Validation\Validator;
 
     class ProductFormValidation extends Validator {
@@ -40,6 +40,15 @@ For example, if you want to validate Add Product Form, it may look like this:
             $this->rules['productImage'] = "file|mime:mimes";
         }
     }
+```
+
+it is recommended to put these files into the directory, so it may look something like this:
+
+```
+FormValidations/
+├── AccountFormValidation.php
+├── CommentFormValidation.php
+└── ProductFormValidation.php
 ```
 
 ### File Validation
