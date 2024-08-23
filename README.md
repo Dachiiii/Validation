@@ -61,15 +61,15 @@ This code validates if input is file, even though this is correct, always use **
 because if it's validated without mime types, it means any kind of file will pass validation, and
 website will become vulnerable to file upload vulnerabilites. Safest way to validate files is:
 
-```
+```php
 protected array $valid_mime_types = ['video/mp4','image/png','image/gif','image/jpeg',...];
-...php
+...
 $this->rules['file'] = "file|mime:valid_mime_types";
 ```
 
 ## Final Validation
 
-```
+```php
 $validator = new ProductFormValidation();
 if ($validator->validate($to_validate, $validator->rules)) {
     // Validation Pass
