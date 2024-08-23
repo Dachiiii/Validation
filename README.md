@@ -18,7 +18,7 @@ to validate input data, several steps have to be taken, creating FormValidationC
 For example, if you want to validate Add Product Form, you must create **regular class file** in your project,
 and write rules in it, for example:
 
-```
+```php
 <?php
     // your\namespace    if necessarily
     use Validation\Validator;
@@ -53,7 +53,7 @@ FormValidations/
 
 ### File Validation
 
-```
+```php
 $this->rules['file'] = "file";
 ```
 
@@ -63,7 +63,7 @@ website will become vulnerable to file upload vulnerabilites. Safest way to vali
 
 ```
 protected array $valid_mime_types = ['video/mp4','image/png','image/gif','image/jpeg',...];
-...
+...php
 $this->rules['file'] = "file|mime:valid_mime_types";
 ```
 
